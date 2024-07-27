@@ -1,16 +1,14 @@
 ---
-
 interface Props {
 	text: string;
     highlight: string;
-    textColor?: string;
 }
 
-const { text, highlight, textColor = "white" } = Astro.props;
+const { text, highlight} = Astro.props;
 ---
 
-<div class="text-center w-max h-max p-10 rounded-2xl bg-white-900 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-0 border border-white border-opacity-40 border-r-0 border-b-0">
-    <span class:list={["max-sm:text-md md:text-3xl text-" + textColor]}>{text}</span>
+<div class="text-center w-max h-max p-10 rounded-3xl shadow-sm bg-white-900 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-0 border border-white border-opacity-40 border-r-0 border-b-0">
+    <span class="text-xl md:text-3xl text-white">{text}</span>
     <br>
-    <span class:list={["max-sm:text-5xl md:text-8xl text-" + textColor]}>{highlight}</span>
+    <span class="text-5xl md:text-8xl text-white">{highlight}</span>
 </div>
