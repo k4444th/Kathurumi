@@ -1,0 +1,31 @@
+---
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/images/logo-transparent.png" />
+		<meta name="generator" content={Astro.generator} />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>  
+		<title>{title}</title>
+	</head>
+	<body>
+		<Header></Header>
+		<div class="max-sm:h-20 md:h-24"></div>
+		<Hero></Hero>
+		<div class="max-sm:my-5 md:my-10 max-sm:mx-10 md:mx-24 lg:mx-48">
+			<slot />
+		</div>
+	</body>
+</html>
