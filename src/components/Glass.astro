@@ -7,8 +7,32 @@ interface Props {
 const { text, highlight} = Astro.props;
 ---
 
-<div class="text-center w-max h-max p-10 rounded-3xl shadow-sm bg-white-900 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-0 border border-white border-opacity-40 border-r-0 border-b-0">
+<div id="fade-out-on-scroll" class="text-center w-max h-max p-10 rounded-3xl shadow-sm bg-white-900 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-0 border border-white border-opacity-40 border-r-0 border-b-0">
     <span class="text-xl md:text-3xl text-white">{text}</span>
     <br>
     <span class="text-5xl md:text-8xl text-white">{highlight}</span>
 </div>
+
+<script>
+    function fadeOutOnScroll(element, breakpoint) { 
+        let distanceToTop = window.scrollY;
+        let opacity = 1;
+        
+        if (distanceToTop < breakpoint) {
+            opacity = 1 - distanceToTop / breakpoint;
+            element.style.opacity = opacity;
+        }
+        
+        else {
+            element.style.opacity = 0;
+        }
+    }
+    
+    let element = document.getElementById("fade-out-on-scroll");
+
+    function scrollHandler() {
+        fadeOutOnScroll(element, 200);
+    }
+
+    window.addEventListener('scroll', scrollHandler);
+</script>
