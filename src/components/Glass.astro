@@ -14,7 +14,7 @@ const { text, highlight} = Astro.props;
 </div>
 
 <script>
-    function fadeOutOnScroll(element, breakpoint) { 
+    function fadeOutOnScroll(element: any, breakpoint: number) { 
         let distanceToTop = window.scrollY;
         let opacity = 1;
         
