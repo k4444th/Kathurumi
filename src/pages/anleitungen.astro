@@ -1,0 +1,14 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ImageCard from '../components/ImageCard.astro';
+---
+
+<Layout title="Kathurumi - Anleitungen">
+	<main>
+		<h3 class="text-center text-3xl">Alle Anleitungen:</h3>
+		<div class="flex flex-wrap gap-10 justify-center my-10">
+			<ImageCard title="Matcha Kuh" image="/images/matcha-kuh.png" url="/anleitungen/matcha-kuh"></ImageCard>
+			<ImageCard title="Dackel" image="/images/dackel.png" url="/anleitungen/dackel"></ImageCard>
+		</div>
+	</main>
+</Layout>
